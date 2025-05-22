@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/mossGreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
@@ -11,24 +12,40 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="280dp"
+        android:textStyle="italic"
+        android:layout_marginHorizontal="15dp"
         android:autofillHints="example@gmail.com"
-        android:hint="email" />
+        android:padding="12dp"
+        android:hint="email"
+        android:background="@drawable/text_background_selector"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="50dp"
-        android:hint="Password"
-        app:layout_constraintTop_toBottomOf="@id/email" />
+        android:hint="password"
+        android:padding="12dp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        android:background="@drawable/text_background_selector"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"
-        android:layout_width="match_parent"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
-        android:layout_marginTop="30dp"
-        android:text="Register Now" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/stroke_golden"
+        android:text="Register now"
+        android:textColor="#50660A"
+        android:textSize="20sp" />
 </RelativeLayout>
