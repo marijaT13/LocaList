@@ -1,5 +1,6 @@
 package com.example.localist;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -53,6 +54,8 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "Registering user successful!", Toast.LENGTH_SHORT).show();
+                       startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                       finish();
                     } else {
                         Toast.makeText(RegisterActivity.this, "Registering failed! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
