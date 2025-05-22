@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "391515221502",
+    "project_id": "localist-d63b7",
+    "storage_bucket": "localist-d63b7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391515221502:android:bd9e9b4db2d3c4b650e4af",
+        "android_client_info": {
+          "package_name": "com.example.localist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCizokocdqduiWsgrk3M3w5eGMTEJd9RfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
