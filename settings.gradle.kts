@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
     }
 }
 dependencyResolutionManagement {
@@ -16,8 +17,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
     }
 }
-
 rootProject.name = "LocaList"
 include(":app")
