@@ -9,6 +9,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="bookmark">Bookmark</string>
     <string name="profile">Profile</string>
+    <string name="name">Name</string>
     <string name="home">Home</string>
     <string name="explorer">Explorer</string>
     <string name="inputSearch">City, Attractions..</string>

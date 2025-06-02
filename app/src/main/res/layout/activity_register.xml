@@ -10,16 +10,29 @@
     tools:context=".activities.RegisterActivity">
 
     <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginHorizontal="15dp"
+        android:autofillHints="@string/inputEmail"
+        android:background="@drawable/text_background_selector"
+        android:hint="@string/name"
+        android:padding="12dp"
+        android:textStyle="italic" />
+
+    <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="280dp"
-        android:textStyle="italic"
+        android:layout_below="@+id/name"
         android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="50dp"
         android:autofillHints="@string/inputEmail"
-        android:padding="12dp"
+        android:background="@drawable/text_background_selector"
         android:hint="@string/email"
-        android:background="@drawable/text_background_selector"/>
+        android:padding="12dp"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/password"
