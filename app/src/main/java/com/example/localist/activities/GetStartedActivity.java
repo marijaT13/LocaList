@@ -14,6 +14,10 @@ import com.google.android.gms.auth.api.signin.*;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.*;
+import com.google.firebase.firestore.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class GetStartedActivity extends AppCompatActivity {
 
@@ -21,7 +25,7 @@ public class GetStartedActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
 
-    // ✅ ActivityResultLauncher for Google Sign-In
+    // Google Sign-In launcher
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 Intent data = result.getData();
@@ -39,23 +43,21 @@ public class GetStartedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
 
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // UI Components
         btnGoogle = findViewById(R.id.btn_gmail_register);
         btnRegister = findViewById(R.id.btn_register);
         btnContinueGuest = findViewById(R.id.btn_continue_guest);
 
-        // Google Sign-In options
+        // Configure Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)) // from google-services.json
+                .requestIdToken(getString(R.string.default_web_client_id)) // ensure it's in strings.xml
                 .requestEmail()
                 .build();
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // Register button
+        // Register
         btnRegister.setOnClickListener(v -> {
             startActivity(new Intent(GetStartedActivity.this, RegisterActivity.class));
         });
@@ -66,8 +68,7 @@ public class GetStartedActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(this, "Signed in as Guest", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(GetStartedActivity.this, MainActivity.class));
-                            finish();
+                            goToMain();
                         } else {
                             Toast.makeText(this, "Guest sign-in failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -79,21 +80,61 @@ public class GetStartedActivity extends AppCompatActivity {
     }
 
     private void signInWithGoogle() {
-        Intent signInIntent = googleSignInClient.getSignInIntent();
-        googleSignInLauncher.launch(signInIntent);
+        googleSignInClient.signOut().addOnCompleteListener(task -> {
+            Intent signInIntent = googleSignInClient.getSignInIntent();
+            googleSignInLauncher.launch(signInIntent);
+        });
     }
+
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Signed in with Google", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(GetStartedActivity.this, MainActivity.class));
-                        finish();
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            saveGoogleUserToFirestoreIfNew(user);
+                        }
                     } else {
                         Toast.makeText(this, "Firebase sign-in failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void saveGoogleUserToFirestoreIfNew(FirebaseUser user) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("Users").document(user.getUid());
+
+        userRef.get().addOnSuccessListener(snapshot -> {
+            if (!snapshot.exists()) {
+                // Save user only if not already saved
+                Map<String, Object> userMap = new HashMap<>();
+                userMap.put("uid", user.getUid());
+                userMap.put("email", user.getEmail());
+                userMap.put("name", user.getDisplayName());
+                userMap.put("profile_pic", user.getPhotoUrl() != null ? user.getPhotoUrl().toString() : null);
+                userMap.put("created_at", FieldValue.serverTimestamp());
+
+                userRef.set(userMap)
+                        .addOnSuccessListener(unused -> {
+                            Toast.makeText(this, "Welcome, " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+                            goToMain();
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(this, "Failed to save user: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        });
+            } else {
+                // Already exists
+                goToMain();
+            }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Error checking Firestore: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void goToMain() {
+        startActivity(new Intent(GetStartedActivity.this, MainActivity.class));
+        finish();
     }
 }
