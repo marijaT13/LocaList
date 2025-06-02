@@ -7,47 +7,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".activities.RegisterActivity">
+    tools:context=".activities.LoginActivity">
 
-    <EditText
-        android:id="@+id/email"
+    <!-- Email Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="280dp"
-        android:textStyle="italic"
         android:layout_marginHorizontal="15dp"
-        android:autofillHints="@string/inputEmail"
-        android:padding="12dp"
-        android:hint="@string/email"
-        android:background="@drawable/text_background_selector"/>
+        app:boxBackgroundMode="none">
 
-    <EditText
-        android:id="@+id/password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/email"
+            android:textStyle="italic"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:background="@drawable/text_background_selector"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Field with Toggle -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@+id/email"
-        android:layout_alignParentStart="true"
-        android:layout_marginHorizontal="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLayout"
         android:layout_marginTop="50dp"
-        android:hint="@string/inputPassword"
-        android:padding="12dp"
-        android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@id/email"
-        android:background="@drawable/text_background_selector"/>
+        android:layout_marginHorizontal="15dp"
+        app:endIconMode="password_toggle"
+        app:boxBackgroundMode="none">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/inputPassword"
+            android:textStyle="italic"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/text_background_selector"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Login Button -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
-        style="@android:style/Widget.Button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginVertical="20dp"
+        android:layout_below="@id/passwordLayout"
+        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
         android:background="@drawable/moss_btn"
         android:text="@string/loginBtn"
         android:textSize="20sp"
-        android:textColor="@color/white"
-        />
+        android:textColor="@color/white"/>
 </RelativeLayout>

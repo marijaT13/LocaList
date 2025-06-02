@@ -51,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        if (password.length() < 6) {
+        if (password.length() < 8) {
             Toast.makeText(this, "Password must be at least 8 characters", Toast.LENGTH_SHORT).show();
             return;
         }
