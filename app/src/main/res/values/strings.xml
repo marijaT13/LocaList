@@ -23,5 +23,8 @@
     <string name="email">email</string>
     <string name="register">Register Now</string>
     <string name="getStarted">Get started</string>
+    <string name="guest">Continue as guest</string>
+    <string name="gmail">Register with Gmail</string>
+    <string name="default_web_client_id">391515221502-5nshi49g7e08mksp1n62elm03jf0oppb.apps.googleusercontent.com</string>
 
 </resources>

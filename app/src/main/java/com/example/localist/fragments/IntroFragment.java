@@ -8,25 +8,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.localist.R;
+import com.example.localist.activities.GetStartedActivity;
 import com.example.localist.activities.LoginActivity;
-import com.example.localist.activities.RegisterActivity;
 
 public class IntroFragment extends AppCompatActivity {
 
-    private AppCompatButton register;
+    private AppCompatButton btnGetStarted;
     private AppCompatButton login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.fragment_intro); // Make sure this XML has your layout
+        setContentView(R.layout.fragment_intro);
 
-        register = findViewById(R.id.register);
+        btnGetStarted = findViewById(R.id.btn_get_started);
         login = findViewById(R.id.login);
 
-        register.setOnClickListener(v -> {
-            startActivity(new Intent(IntroFragment.this, RegisterActivity.class));
+        btnGetStarted.setOnClickListener(v -> {
+            startActivity(new Intent(IntroFragment.this, GetStartedActivity.class));
         });
 
         login.setOnClickListener(v -> {

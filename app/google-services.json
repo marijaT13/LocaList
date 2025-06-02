@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "391515221502",
+    "firebase_url": "https://localist-d63b7-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "localist-d63b7",
     "storage_bucket": "localist-d63b7.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.localist"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "391515221502-5nshi49g7e08mksp1n62elm03jf0oppb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.localist",
+            "certificate_hash": "99f629c75c8f51c3f47b9f3867bc962c3e92b623"
+          }
+        },
+        {
+          "client_id": "391515221502-rdnocrh3k948hk0p4mddlcdbjl9mroi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCizokocdqduiWsgrk3M3w5eGMTEJd9RfM"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391515221502-rdnocrh3k948hk0p4mddlcdbjl9mroi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
