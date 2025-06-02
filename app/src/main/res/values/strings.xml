@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LocaList</string>
     <string name="explore_macedonia">Explore Macedonia with us</string>
-    <string name="subtext">Explore the beauty of the little land.</string>
+    <string name="subtext">Discover the beauty of the little land</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
@@ -11,4 +11,17 @@
     <string name="profile">Profile</string>
     <string name="home">Home</string>
     <string name="explorer">Explorer</string>
+    <string name="inputSearch">City, Attractions..</string>
+    <string name="searchBtn">Search</string>
+    <string name="popular">Popular</string>
+    <string name="seeAll">See all</string>
+    <string name="inputEmail">example@gmail.com</string>
+    <string name="inputPassword">password</string>
+    <string name="loginBtn">Login</string>
+    <string name="loginBtnNow">Login now</string>
+    <string name="logoutBtn">Log out</string>
+    <string name="email">email</string>
+    <string name="register">Register Now</string>
+    <string name="getStarted">Get started</string>
+
 </resources>

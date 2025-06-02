@@ -91,7 +91,7 @@
                         android:drawableStart="@drawable/search_icon"
                         android:drawablePadding="8dp"
                         android:ems="10"
-                        android:hint="City, Attraction.."
+                        android:hint="@string/inputSearch"
                         android:inputType="text"
                         android:padding="8dp"
                         android:textColorHint="#6E7E3E"
@@ -110,7 +110,7 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginBottom="2dp"
                         android:background="@drawable/moss_btn"
-                        android:text="Search"
+                        android:text="@string/searchBtn"
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Popular"
+                    android:text="@string/popular"
                     android:textColor="@color/cobaltBlue"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -178,7 +178,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="See all"
+                    android:text="@string/seeAll"
                     android:textColor="@color/cobaltBlue" />
             </LinearLayout>
 
