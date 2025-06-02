@@ -7,10 +7,6 @@ public class ItemModel implements Serializable {
     private String title;
     private String address;
     private String description;
-    private String duration;
-    private String timeTour;
-    private String dateTour;
-    private String distance;
     private double score;
     private ArrayList<String> pic;
     public ArrayList<String> getPic() {
@@ -29,37 +25,7 @@ public class ItemModel implements Serializable {
         this.score = score;
     }
 
-    public String getDistance() {
-        return distance;
-    }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
-    }
-
-    public String getDateTour() {
-        return dateTour;
-    }
-
-    public void setDateTour(String dateTour) {
-        this.dateTour = dateTour;
-    }
-
-    public String getTimeTour() {
-        return timeTour;
-    }
-
-    public void setTimeTour(String timeTour) {
-        this.timeTour = timeTour;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
 
     public String getDescription() {
         return description;
