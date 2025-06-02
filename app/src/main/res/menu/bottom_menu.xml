@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
+    <item
     android:id="@+id/home"
     android:icon="@drawable/bottom_btn1"
-    android:title="Home"
-    android:cnb_background="@color/black"
-    android:cnb_iconColor="@color/mossGreen"/>
+    android:title="@string/home"
+    android:background="@color/black"
+    />
     <item
         android:id="@+id/explorer"
         android:icon="@drawable/bottom_btn2"
-        android:title="Explorer"
-        android:cnb_background="@color/black"
-        android:cnb_iconColor="@color/mossGreen"/>
+        android:title="@string/explorer"
+        android:background="@color/black"
+        />
     <item
         android:id="@+id/bookmark"
         android:icon="@drawable/bottom_btn3"
-        android:title="Bookmark"
-        android:cnb_background="@color/black"
-        android:cnb_iconColor="@color/mossGreen"/>
+        android:title="@string/bookmark"
+        android:background="@color/black"
+        />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/bottom_btn4"
-        android:title="profile"
-        android:cnb_background="@color/black"
-        android:cnb_iconColor="@color/mossGreen"/>
+        android:title="@string/profile"
+        android:background="@color/black"
+        />
 </menu>
