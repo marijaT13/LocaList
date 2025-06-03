@@ -71,10 +71,5 @@ public class ProfileActivity extends AppCompatActivity {
             finish();
         });
 
-        // ✅ About button - show dialog
-        binding.aboutBtn.setOnClickListener(v -> {
-            AboutDialogFragment aboutDialog = new AboutDialogFragment();
-            aboutDialog.show(getSupportFragmentManager(), "about_dialog");
-        });
     }
 }

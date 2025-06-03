@@ -3,6 +3,7 @@ package com.example.localist.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import com.example.localist.R;
 import com.example.localist.adapters.PopularAdapter;
 import com.example.localist.databinding.ActivityMainBinding;
+import com.example.localist.fragments.AboutDialogFragment;
 import com.example.localist.models.ItemModel;
 import com.google.firebase.database.*;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadPopularItems();
+
+        // Setup bottom navigation
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
@@ -45,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
             return false;
         });
+
+        // Show AboutDialogFragment when info button is clicked
+        ImageView infoBtn = findViewById(R.id.info_btn);
+        if (infoBtn != null) {
+            infoBtn.setOnClickListener(v -> {
+                AboutDialogFragment dialog = new AboutDialogFragment();
+                dialog.show(getSupportFragmentManager(), "about_dialog");
+            });
+        }
     }
 
     private void loadPopularItems() {
