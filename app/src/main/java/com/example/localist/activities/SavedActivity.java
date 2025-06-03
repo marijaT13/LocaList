@@ -19,25 +19,35 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
+import com.example.localist.database.AppDatabase;
+import com.example.localist.database.ItemDao;
+
+
+
 
 public class SavedActivity extends AppCompatActivity {
 
     private ActivitySavedBinding binding;
     private ArrayList<ItemModel> savedList;
     private PopularAdapter adapter;
-
     private DatabaseReference savedRef;
+    private ItemDao itemDao;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySavedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        itemDao = AppDatabase.getInstance(this).itemDao();
+        loadSavedItemsFromRoom();  // Instead of Firebase for now
 
         savedList = new ArrayList<>();
         adapter = new PopularAdapter(this, savedList);
@@ -64,9 +74,9 @@ public class SavedActivity extends AppCompatActivity {
 
         savedRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull com.google.firebase.database.DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 savedList.clear();
-                for (com.google.firebase.database.DataSnapshot data : snapshot.getChildren()) {
+                for (DataSnapshot data : snapshot.getChildren()) {
                     ItemModel item = data.getValue(ItemModel.class);
                     if (item != null) {
                         savedList.add(item);
@@ -76,7 +86,7 @@ public class SavedActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull com.google.firebase.database.DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(SavedActivity.this, "Failed to load saved items", Toast.LENGTH_SHORT).show();
             }
         });
@@ -85,14 +95,14 @@ public class SavedActivity extends AppCompatActivity {
     private void setupClearButton() {
         binding.btnClearSaved.setOnClickListener(v -> {
             if (savedRef != null) {
-                // Remove all saved items for this user
                 savedRef.removeValue()
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(SavedActivity.this, "Saved items cleared", Toast.LENGTH_SHORT).show();
                             savedList.clear();
                             adapter.notifyDataSetChanged();
                         })
-                        .addOnFailureListener(e -> Toast.makeText(SavedActivity.this, "Failed to clear saved items", Toast.LENGTH_SHORT).show());
+                        .addOnFailureListener(e ->
+                                Toast.makeText(SavedActivity.this, "Failed to clear saved items", Toast.LENGTH_SHORT).show());
             } else {
                 Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
             }
@@ -114,8 +124,18 @@ public class SavedActivity extends AppCompatActivity {
                 startActivity(new Intent(SavedActivity.this, ProfileActivity.class));
                 return true;
             }
-
             return false;
         });
+
+    }
+    private void loadSavedItemsFromRoom() {
+        new Thread(() -> {
+            ArrayList<ItemModel> items = new ArrayList<>(itemDao.getAllSavedItems());
+            runOnUiThread(() -> {
+                savedList.clear();
+                savedList.addAll(items);
+                adapter.notifyDataSetChanged();
+            });
+        }).start();
     }
 }

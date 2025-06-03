@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.localist"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,9 @@ android {
 }
 
 dependencies {
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -56,4 +59,5 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth")
     implementation ("com.google.android.material:material:1.11.0")
     implementation ("com.google.code.gson:gson")
+
 }

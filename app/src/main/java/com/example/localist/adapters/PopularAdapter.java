@@ -91,4 +91,3 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
         }
     }
 }
-

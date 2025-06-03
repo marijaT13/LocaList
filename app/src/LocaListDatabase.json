@@ -1,110 +1,110 @@
 { "Popular": [
-    {
-      "address": "Ohrid",
-      "description":"Ohrid is a historic and cultural city located in the southwest of North Macedonia, by Lake Ohrid. It is known for its beautiful natural surroundings, rich cultural heritage, and ancient churches and monasteries. Ohrid is one of the oldest and most important tourist centers in the country, often called the 'Pearl of the Balkans'.The city is protected by UNESCO due to its unique combination of natural beauty and historical monuments.",
-      "pic": [
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881987/background2_wdka6s.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/ohrid1_vsksz7.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/ohrid4_jnfs8i.jpg"
-      ],
-      "score": 4.7,
-      "title": "Ohrid Lake",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Ohrid",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+  {
+    "address": "Ohrid",
+    "description":"Ohrid is a historic and cultural city located in the southwest of North Macedonia, by Lake Ohrid. It is known for its beautiful natural surroundings, rich cultural heritage, and ancient churches and monasteries. Ohrid is one of the oldest and most important tourist centers in the country, often called the 'Pearl of the Balkans'.The city is protected by UNESCO due to its unique combination of natural beauty and historical monuments.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881987/background2_wdka6s.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/ohrid1_vsksz7.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/ohrid4_jnfs8i.jpg"
+    ],
+    "score": 4.7,
+    "title": "Ohrid Lake",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ohrid",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
 
-    },
-    {
-      "address": "Bitola",
-      "description": "Bitola is a vibrant city in southwestern North Macedonia known for its rich history, Ottoman-era architecture, and lively cultural scene. Often called the 'City of Consuls', Bitola features charming old bazaars, historic churches, and a bustling pedestrian street. It is an important economic and cultural hub, blending tradition with modern life.",
-      "pic": [
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/one_ntpu9p.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882535/bitola1_c6k9qe.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881987/background_mjq4xz.jpg"
-      ],
-      "score": 4.6,
-      "title": "History of Bitola",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Bitola",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+  },
+  {
+    "address": "Bitola",
+    "description": "Bitola is a vibrant city in southwestern North Macedonia known for its rich history, Ottoman-era architecture, and lively cultural scene. Often called the 'City of Consuls', Bitola features charming old bazaars, historic churches, and a bustling pedestrian street. It is an important economic and cultural hub, blending tradition with modern life.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/one_ntpu9p.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882535/bitola1_c6k9qe.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881987/background_mjq4xz.jpg"
+    ],
+    "score": 4.6,
+    "title": "History of Bitola",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bitola",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
 
-    },
-    {
-      "address": "Dojran",
-      "description": "Dojran is a small town in southeastern North Macedonia, located on the shores of Lake Dojran. It is famous for its peaceful lakeside atmosphere, fishing traditions, and natural beauty. Dojran is a popular destination for relaxation, water sports, and enjoying local cuisine by the lake.",
-      "pic": [
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882884/dojran2_vw6t2j.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882884/dojran_pcxx5z.jpg"
-      ],
-      "score": 3.6,
-      "title": "Dojran Lake",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Dojran",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+  },
+  {
+    "address": "Dojran",
+    "description": "Dojran is a small town in southeastern North Macedonia, located on the shores of Lake Dojran. It is famous for its peaceful lakeside atmosphere, fishing traditions, and natural beauty. Dojran is a popular destination for relaxation, water sports, and enjoying local cuisine by the lake.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882884/dojran2_vw6t2j.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882884/dojran_pcxx5z.jpg"
+    ],
+    "score": 3.6,
+    "title": "Dojran Lake",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Dojran",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
 
-    },
-    {
-      "address": "Oteševo",
-      "description": "Oteševo is a quiet village on the western shore of Lake Prespa in North Macedonia. It’s known for its beautiful natural surroundings, clean air with wild juniper trees, and outdoor activities like hiking and kayaking.The village also has historical significance from World War II and offers a peaceful retreat for nature lovers.",
-      "pic": [
+  },
+  {
+    "address": "Oteševo",
+    "description": "Oteševo is a quiet village on the western shore of Lake Prespa in North Macedonia. It’s known for its beautiful natural surroundings, clean air with wild juniper trees, and outdoor activities like hiking and kayaking.The village also has historical significance from World War II and offers a peaceful retreat for nature lovers.",
+    "pic": [
       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748883286/otesevo2_ubxc3l.png",
       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748883286/otesevo_avqilc.jpg"
-      ],
-      "score": 4.7,
-      "title": "Prespa Lake",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Prespa",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
-
-    },
-     {
-      "address": "Skopje",
-      "description": "Skopje, the capital of North Macedonia, is a dynamic city that blends ancient history with modern development. It is home to landmarks like the Stone Bridge, the Old Bazaar, and the Millennium Cross. The city offers a mix of cultural heritage, museums, monuments, and a lively atmosphere, making it a unique destination in the Balkans.",
-      "pic": [
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/skopje1_slqknd.jpg",
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/matka_d4xk4p.jpg",
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/skopje2_ajypzb.jpg"
-      ],
-      "score": 4.7,
-      "title": "Skopje",
-       "wikiUrl": "https://en.wikipedia.org/wiki/Skopje",
-       "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
-
-     },
-    {
-      "address": "Struga",
-      "description": "Struga is a charming town located on the northern shore of Lake Ohrid, famous for the Black Drim River that flows through its center. Known for its serene lake views, beautiful beaches, and rich cultural heritage, Struga hosts the renowned Struga Poetry Evenings, attracting poets from around the world. It’s a popular destination for relaxation, swimming, and enjoying traditional Macedonian hospitality.",
-      "pic": [
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881990/struga1_oxtyrg.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/struga_bcjoaz.jpg"
     ],
-      "score": 4.3,
-      "title": "Struga",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Struga",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+    "score": 4.7,
+    "title": "Prespa Lake",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Prespa",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
 
-    },
-    {
-      "address": "Mavrovo",
-      "description": "Mavrovo is a scenic mountain region in western North Macedonia, known for its national park, ski center, and the tranquil Mavrovo Lake. It’s a popular destination for nature lovers, hikers, and winter sports enthusiasts.",
-      "pic": [
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881990/three_iiqzki.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748895154/mavrovo_cgi5wh.jpg"    
+  },
+  {
+    "address": "Skopje",
+    "description": "Skopje, the capital of North Macedonia, is a dynamic city that blends ancient history with modern development. It is home to landmarks like the Stone Bridge, the Old Bazaar, and the Millennium Cross. The city offers a mix of cultural heritage, museums, monuments, and a lively atmosphere, making it a unique destination in the Balkans.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/skopje1_slqknd.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/matka_d4xk4p.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/skopje2_ajypzb.jpg"
     ],
-      "score": 4.3,
-      "title": "Mavrovo Lake",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Mavrovo_(region)",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+    "score": 4.7,
+    "title": "Skopje",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Skopje",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
 
-    },
-    {
-      "address": "Kratovo",
-      "description": "Kratovo is a small town in northeastern North Macedonia, known for its stone bridges, medieval towers, and narrow winding streets. Built in a volcanic crater, it offers a unique blend of history, culture, and natural beauty.",
-      "pic": [
-       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/kratovo_fis6xi.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/kuklici_raojlz.jpg",
-        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748894555/kratis_azge3n.jpg"   
+  },
+  {
+    "address": "Struga",
+    "description": "Struga is a charming town located on the northern shore of Lake Ohrid, famous for the Black Drim River that flows through its center. Known for its serene lake views, beautiful beaches, and rich cultural heritage, Struga hosts the renowned Struga Poetry Evenings, attracting poets from around the world. It’s a popular destination for relaxation, swimming, and enjoying traditional Macedonian hospitality.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881990/struga1_oxtyrg.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/struga_bcjoaz.jpg"
     ],
-      "score": 4.3,
-      "title": "Kratovo",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Kratovo,_North_Macedonia",
-      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
-    }
-  ]
+    "score": 4.3,
+    "title": "Struga",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Struga",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
+  },
+  {
+    "address": "Mavrovo",
+    "description": "Mavrovo is a scenic mountain region in western North Macedonia, known for its national park, ski center, and the tranquil Mavrovo Lake. It’s a popular destination for nature lovers, hikers, and winter sports enthusiasts.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881990/three_iiqzki.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748895154/mavrovo_cgi5wh.jpg"
+    ],
+    "score": 4.3,
+    "title": "Mavrovo Lake",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Mavrovo_(region)",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
+  },
+  {
+    "address": "Kratovo",
+    "description": "Kratovo is a small town in northeastern North Macedonia, known for its stone bridges, medieval towers, and narrow winding streets. Built in a volcanic crater, it offers a unique blend of history, culture, and natural beauty.",
+    "pic": [
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/kratovo_fis6xi.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881988/kuklici_raojlz.jpg",
+      "https://res.cloudinary.com/dup91oa1e/image/upload/v1748894555/kratis_azge3n.jpg"
+    ],
+    "score": 4.3,
+    "title": "Kratovo",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kratovo,_North_Macedonia",
+    "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+  }
+]
 }
