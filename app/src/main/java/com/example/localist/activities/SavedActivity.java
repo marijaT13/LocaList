@@ -1,5 +1,6 @@
 package com.example.localist.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.example.localist.R;
 import com.example.localist.adapters.PopularAdapter;
 import com.example.localist.databinding.ActivitySavedBinding;
 import com.example.localist.models.ItemModel;
+import com.example.localist.utils.LocaleHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +29,10 @@ public class SavedActivity extends AppCompatActivity {
     private PopularAdapter adapter;
 
     private DatabaseReference savedRef;
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

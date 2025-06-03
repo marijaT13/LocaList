@@ -1,5 +1,6 @@
 package com.example.localist.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.localist.adapters.PicListAdapter;
 import com.example.localist.databinding.ActivityDetailBinding;
 import com.example.localist.models.ItemModel;
+import com.example.localist.utils.LocaleHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -24,7 +26,10 @@ public class DetailActivity extends AppCompatActivity {
 
     private ActivityDetailBinding binding;
     private ItemModel object;
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,4 +117,5 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
     }
+
 }

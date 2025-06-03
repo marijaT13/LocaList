@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/clear_btn"
         android:textColor="@color/white"
-        android:text="Clear"
+        android:text="@string/clearBtn"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/recyclerViewSaved"

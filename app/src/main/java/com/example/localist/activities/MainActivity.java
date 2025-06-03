@@ -1,5 +1,6 @@
 package com.example.localist.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.example.localist.adapters.PopularAdapter;
 import com.example.localist.databinding.ActivityMainBinding;
 import com.example.localist.fragments.AboutDialogFragment;
 import com.example.localist.models.ItemModel;
+import com.example.localist.utils.LocaleHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 
@@ -24,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private final String DATABASE_URL = "https://localist-d63b7-default-rtdb.europe-west1.firebasedatabase.app/";
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

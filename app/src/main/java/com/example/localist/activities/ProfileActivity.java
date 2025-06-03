@@ -1,6 +1,7 @@
 package com.example.localist.activities;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
@@ -8,11 +9,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.localist.R;
 import com.example.localist.databinding.ActivityProfileBinding;
 import com.example.localist.fragments.IntroFragment;
+import com.example.localist.utils.LocaleHelper;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +27,10 @@ public class ProfileActivity extends AppCompatActivity {
     private ActivityProfileBinding binding;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, MainActivity.class));
                 return true;
             } else if (id == R.id.bookmark) {
-                 startActivity(new Intent(ProfileActivity.this, SavedActivity.class));
+                startActivity(new Intent(ProfileActivity.this, SavedActivity.class));
                 return true;
             } else if (id == R.id.profile) {
                 // Already here
@@ -89,6 +95,25 @@ public class ProfileActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("Cancel", null)
                     .show();
+        });
+        //switcher for language
+        SwitchCompat languageSwitch = findViewById(R.id.languageSwitch);
+
+        // Check saved language and update switch state
+        String currentLang = LocaleHelper.getPersistedLanguage(this);
+        languageSwitch.setChecked(currentLang.equals("mk")); // Adjust based on your logic
+
+        languageSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String newLang = isChecked ? "mk" : "en";
+
+            // Set and persist language
+            LocaleHelper.setLocale(ProfileActivity.this, newLang);
+
+            // Restart the entire app to apply changes
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finishAffinity(); // closes all activities in the stack
         });
     }
     private void reAuthenticateAndDelete() {

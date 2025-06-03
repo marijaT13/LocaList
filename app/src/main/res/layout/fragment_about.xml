@@ -24,7 +24,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:src="@drawable/favicon"
-                android:contentDescription="App Icon"
+                android:contentDescription="@string/appIcon"
                 android:layout_marginBottom="16dp" />
 
             <TextView

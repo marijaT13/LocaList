@@ -123,7 +123,7 @@
                     android:layout_height="24dp"
                     android:layout_gravity="end"
                     android:layout_marginStart="16dp"
-                    android:contentDescription="About"
+                    android:contentDescription="@string/aboutBtn"
                     app:srcCompat="@drawable/information" />
 
             </LinearLayout>

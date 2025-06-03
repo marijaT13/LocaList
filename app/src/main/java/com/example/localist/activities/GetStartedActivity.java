@@ -1,5 +1,6 @@
 package com.example.localist.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.localist.R;
+import com.example.localist.utils.LocaleHelper;
 import com.google.android.gms.auth.api.signin.*;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
@@ -24,7 +26,10 @@ public class GetStartedActivity extends AppCompatActivity {
     private Button btnRegister, btnContinueGuest, btnGoogle;
     private FirebaseAuth mAuth;
     private GoogleSignInClient googleSignInClient;
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
+    }
     // Google Sign-In launcher
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {

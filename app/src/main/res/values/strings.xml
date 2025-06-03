@@ -9,7 +9,6 @@
     <string name="contact">Contact: tashevska.marija@uklo.edu.mk</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="bookmark">Bookmark</string>
@@ -28,7 +27,6 @@
     <string name="email">email</string>
     <string name="register">Register Now</string>
     <string name="getStarted">Get started</string>
-    <string name="guest">Continue as guest</string>
     <string name="gmail">Register with Gmail</string>
     <string name="default_web_client_id">391515221502-5nshi49g7e08mksp1n62elm03jf0oppb.apps.googleusercontent.com</string>
     <string name="title">title</string>
@@ -41,4 +39,24 @@
     <string name="backBtnDescription">Go back</string>
     <string name="booking">Book a weekend</string>
     <string name="deleteBtn">Delete Account</string>
+    <string name="logged_out">Logged out!</string>
+    <string name="guest">Guest</string>
+    <string name="user">User</string>
+    <string name="anonymous_user">Anonymous User</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete_confirmation">Are you sure you want to delete your account? This action cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="account_deleted">Account deleted</string>
+    <string name="delete_failed">Failed to delete account</string>
+    <string name="reauthenticate">Re-authenticate</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="confirm">Confirm</string>
+    <string name="reauth_failed">Re-authentication failed. Wrong password?</string>
+    <string name="password_required">Password required</string>
+    <string name="firestore_delete_failed">Failed to delete Firestore data</string>
+    <string name="cancel">Cancel</string>
+    <string name="language_switch">English/Macedonian</string>
+    <string name="scoreTxt">5</string>
+    <string name="appIcon">App Icon</string>
+    <string name="clearBtn">Clear</string>
 </resources>
