@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LocaList"
         tools:targetApi="31">
+
         <activity
             android:name=".activities.DetailActivity"
             android:exported="false" />
@@ -24,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.ProfileActivity" />
+
         <activity android:name=".activities.GetStartedActivity" />
         <activity
             android:name=".activities.LoginActivity"

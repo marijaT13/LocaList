@@ -2,6 +2,11 @@
     <string name="app_name">LocaList</string>
     <string name="explore_macedonia">Explore Macedonia with us</string>
     <string name="subtext">Discover the beauty of the little land</string>
+    <string name="aboutTitle">Discover Macedonia</string>
+    <string name="version">Version 1.0</string>
+    <string name="aboutTxt">This app showcases the beauty, culture, and history of Macedonia. Discover breathtaking locations, historical landmarks, and vibrant traditions through stunning images and curated descriptions.</string>
+    <string name="developed">Developed: Marija Tashevska</string>
+    <string name="contact">Contact: tashevska.marija@uklo.edu.mk</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
@@ -11,7 +16,6 @@
     <string name="profile">Profile</string>
     <string name="name">Name</string>
     <string name="home">Home</string>
-    <string name="explorer">Explorer</string>
     <string name="inputSearch">City, Attractions..</string>
     <string name="searchBtn">Search</string>
     <string name="popular">Popular</string>
@@ -32,4 +36,5 @@
     <string name="description">description</string>
     <string name="descriptionTitle">Description</string>
     <string name="readMore">Read More</string>
+    <string name="aboutBtn">About app</string>
 </resources>
