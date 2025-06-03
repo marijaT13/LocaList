@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.example.localist.adapters.PopularAdapter;
 import com.example.localist.databinding.ActivityMainBinding;
@@ -57,10 +57,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    // Set up the RecyclerView
-                    binding.recyclerViewPopular.setLayoutManager(
-                            new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false)
-                    );
+                    // Use GridLayoutManager for 2-column vertical display
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+                    binding.recyclerViewPopular.setLayoutManager(gridLayoutManager);
 
                     PopularAdapter adapter = new PopularAdapter(MainActivity.this, popularList);
                     binding.recyclerViewPopular.setAdapter(adapter);

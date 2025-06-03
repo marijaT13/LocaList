@@ -111,31 +111,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Popular row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="32dp"
-                android:orientation="horizontal"
-                android:paddingVertical="4dp">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/popular"
-                    android:textColor="@color/cobaltBlue"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/seeAll"
-                    android:textColor="@color/cobaltBlue" />
-            </LinearLayout>
 
             <!-- Popular RecyclerView Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
