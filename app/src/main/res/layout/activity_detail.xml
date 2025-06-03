@@ -40,11 +40,12 @@
 
                     <ImageView
                         android:id="@+id/back_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="38dp"
                         android:background="@drawable/half_gold2"
+                        android:contentDescription="@string/favBtnDescription"
                         android:clickable="true"
                         android:focusable="true"
                         android:elevation="10dp"
@@ -55,14 +56,15 @@
 
                     <ImageView
                         android:id="@+id/fav_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_marginEnd="24dp"
-                        android:layout_marginTop="32dp"
+                        android:layout_marginTop="38dp"
                         android:background="@drawable/half_gold2"
                         android:clickable="true"
-                        android:focusable="true"
+                        android:contentDescription="@string/favBtnDescription"
                         android:elevation="10dp"
+                        android:focusable="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/fav_icon" />
@@ -212,7 +214,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/read_more_btn"
             style="@android:style/Widget.Button"
-            android:layout_width="180dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@drawable/cobalt_btn"
@@ -222,6 +224,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/booking_btn"
+            style="@android:style/Widget.Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/book_btn"
+            android:text="@string/booking"
+            android:textColor="@color/cobaltBlue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

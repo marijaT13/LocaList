@@ -1,11 +1,13 @@
 package com.example.localist.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.example.localist.adapters.PicListAdapter;
@@ -24,13 +26,14 @@ public class DetailActivity extends AppCompatActivity {
     private ItemModel object;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         getIntentExtra();
         setupUI();
+        setupListeners();
     }
 
     private void getIntentExtra() {
@@ -44,6 +47,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
+        // Set texts
         binding.titleTxt.setText(object.getTitle());
         binding.addressTxt.setText(object.getAddress());
         binding.descriptionTxt.setText(object.getDescription());
@@ -57,12 +61,21 @@ public class DetailActivity extends AppCompatActivity {
                     .into(binding.mainPic);
         }
 
-        // Load horizontal list
+        // Setup horizontal image list
         ArrayList<String> picList = new ArrayList<>(object.getPic());
-        binding.picList.setLayoutManager(new androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false));
+        binding.picList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         binding.picList.setAdapter(new PicListAdapter(picList, binding.mainPic));
 
-        // Save to Firebase
+        // Set content description for accessibility
+        binding.backBtn.setContentDescription("Go back");
+        binding.favBtn.setContentDescription("Save to favorites");
+    }
+
+    private void setupListeners() {
+        // Back button - close activity
+        binding.backBtn.setOnClickListener(v -> onBackPressed());
+
+        // Save to Firebase favorite
         binding.favBtn.setOnClickListener(v -> {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null && object != null) {
@@ -77,6 +90,25 @@ public class DetailActivity extends AppCompatActivity {
                         .addOnFailureListener(e -> Toast.makeText(this, "Failed to save", Toast.LENGTH_SHORT).show());
             } else {
                 Toast.makeText(this, "User not signed in", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Read More button opens wikiUrl in browser
+        binding.readMoreBtn.setOnClickListener(v -> {
+            if (object.getWikiUrl() != null && !object.getWikiUrl().isEmpty()) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(object.getWikiUrl()));
+                startActivity(browserIntent);
+            } else {
+                Toast.makeText(this, "Wikipedia link not available", Toast.LENGTH_SHORT).show();
+            }
+        });
+        // Book a weekend button opens bookingUrl in browser
+        binding.bookingBtn.setOnClickListener(v -> {
+            if (object.getBookingUrl() != null && !object.getBookingUrl().isEmpty()) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(object.getBookingUrl()));
+                startActivity(browserIntent);
+            } else {
+                Toast.makeText(this, "Booking link not available", Toast.LENGTH_SHORT).show();
             }
         });
     }

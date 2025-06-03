@@ -9,6 +9,24 @@ public class ItemModel implements Serializable {
     private String address;
     private String description;
     private double score;
+    private String wikiUrl;
+    private String bookingUrl;
+    public String getBookingUrl() {
+        return bookingUrl;
+    }
+
+    public void setBookingUrl(String bookingUrl) {
+        this.bookingUrl = bookingUrl;
+    }
+
+    public String getWikiUrl() {
+        return wikiUrl;
+    }
+
+    public void setWikiUrl(String wikiUrl) {
+        this.wikiUrl = wikiUrl;
+    }
+
     private ArrayList<String> pic;
 
     public String getId() {

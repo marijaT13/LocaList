@@ -8,7 +8,10 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/ohrid4_jnfs8i.jpg"
       ],
       "score": 4.7,
-      "title": "Ohrid Lake"
+      "title": "Ohrid Lake",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Ohrid",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
     {
       "address": "Bitola",
@@ -19,7 +22,10 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881987/background_mjq4xz.jpg"
       ],
       "score": 4.6,
-      "title": "History of Bitola"
+      "title": "History of Bitola",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bitola",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
     {
       "address": "Dojran",
@@ -29,7 +35,10 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748882884/dojran_pcxx5z.jpg"
       ],
       "score": 3.6,
-      "title": "Dojran Lake"
+      "title": "Dojran Lake",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Dojran",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
     {
       "address": "Oteševo",
@@ -39,7 +48,10 @@
       "https://res.cloudinary.com/dup91oa1e/image/upload/v1748883286/otesevo_avqilc.jpg"
       ],
       "score": 4.7,
-      "title": "Prespa Lake"
+      "title": "Prespa Lake",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Prespa",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
      {
       "address": "Skopje",
@@ -50,8 +62,11 @@
        "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/skopje2_ajypzb.jpg"
       ],
       "score": 4.7,
-      "title": "Skopje"
-    },
+      "title": "Skopje",
+       "wikiUrl": "https://en.wikipedia.org/wiki/Skopje",
+       "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
+     },
     {
       "address": "Struga",
       "description": "Struga is a charming town located on the northern shore of Lake Ohrid, famous for the Black Drim River that flows through its center. Known for its serene lake views, beautiful beaches, and rich cultural heritage, Struga hosts the renowned Struga Poetry Evenings, attracting poets from around the world. It’s a popular destination for relaxation, swimming, and enjoying traditional Macedonian hospitality.",
@@ -60,7 +75,10 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748881989/struga_bcjoaz.jpg"
     ],
       "score": 4.3,
-      "title": "Struga"
+      "title": "Struga",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Struga",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
     {
       "address": "Mavrovo",
@@ -70,7 +88,10 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748895154/mavrovo_cgi5wh.jpg"    
     ],
       "score": 4.3,
-      "title": "Mavrovo Lake"
+      "title": "Mavrovo Lake",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Mavrovo_(region)",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
+
     },
     {
       "address": "Kratovo",
@@ -81,7 +102,9 @@
         "https://res.cloudinary.com/dup91oa1e/image/upload/v1748894555/kratis_azge3n.jpg"   
     ],
       "score": 4.3,
-      "title": "Kratovo"
+      "title": "Kratovo",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Kratovo,_North_Macedonia",
+      "bookingUrl": "https://www.booking.com/searchresults.en-us.html?ss=North+Macedonia&ssne=North+Macedonia&ssne_untouched=North+Macedonia&efdco=1&label=pc-row-booking-booking-sd-estb&sid=c31fe41513ed2a9ae35b4f4d01eb8e6c&aid=348858&lang=en-us&sb=1&src_elem=sb&src=searchresults&dest_id=125&dest_type=country&checkin=2026-01-16&checkout=2026-01-19&ltfd=5%3A1%3A6-2025_7-2025_8-2025%3A1%3A&group_adults=2&no_rooms=1&group_children=0&sb_travel_purpose=leisure"
     }
   ]
 }
