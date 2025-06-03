@@ -40,4 +40,5 @@
     <string name="favBtnDescription">Save to favorites</string>
     <string name="backBtnDescription">Go back</string>
     <string name="booking">Book a weekend</string>
+    <string name="deleteBtn">Delete Account</string>
 </resources>
