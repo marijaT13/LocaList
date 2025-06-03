@@ -4,11 +4,20 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ItemModel implements Serializable {
+    private String id;
     private String title;
     private String address;
     private String description;
     private double score;
     private ArrayList<String> pic;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     public ArrayList<String> getPic() {
         return pic;
     }

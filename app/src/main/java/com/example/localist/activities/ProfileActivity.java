@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.localist.R;
 import com.example.localist.databinding.ActivityProfileBinding;
-import com.example.localist.fragments.AboutDialogFragment;
 import com.example.localist.fragments.IntroFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -53,13 +52,18 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, MainActivity.class));
                 return true;
             } else if (id == R.id.bookmark) {
+                 startActivity(new Intent(ProfileActivity.this, SavedActivity.class));
                 return true;
             } else if (id == R.id.profile) {
+                // Already here
                 return true;
             }
 
             return false;
         });
+// Set the profile item as selected
+        binding.bottomNavigationView.setSelectedItemId(R.id.profile);
+
 
         // Logout button
         binding.logoutBtn.setOnClickListener(v -> {

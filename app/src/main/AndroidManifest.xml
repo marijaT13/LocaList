@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LocaList"
         tools:targetApi="31">
+        <activity
+            android:name=".activities.SavedActivity"
+            android:exported="false" />
 
         <activity
             android:name=".activities.DetailActivity"
@@ -26,7 +29,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ProfileActivity" />
-
         <activity android:name=".activities.GetStartedActivity" />
         <activity
             android:name=".activities.LoginActivity"

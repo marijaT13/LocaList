@@ -15,6 +15,7 @@ import com.example.localist.adapters.PopularAdapter;
 import com.example.localist.databinding.ActivityMainBinding;
 import com.example.localist.fragments.AboutDialogFragment;
 import com.example.localist.models.ItemModel;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 // Already here
                 return true;
             } else if (id == R.id.bookmark) {
-                //startActivity(new Intent(MainActivity.this, BookmarkActivity.class));
+                startActivity(new Intent(MainActivity.this, SavedActivity.class));
                 return true;
             } else if (id == R.id.profile) {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
