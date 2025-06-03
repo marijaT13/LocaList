@@ -1,14 +1,15 @@
 package com.example.localist.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.localist.activities.DetailActivity;
 import com.example.localist.databinding.ViewholderPopularBinding;
 import com.example.localist.models.ItemModel;
 
@@ -26,7 +27,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
 
     @NonNull
     @Override
-    public PopularAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ViewholderPopularBinding binding = ViewholderPopularBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false
         );
@@ -34,24 +35,25 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PopularAdapter.Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         ItemModel item = items.get(position);
 
         holder.binding.titleTxt.setText(item.getTitle());
         holder.binding.addressTxt.setText(item.getAddress());
         holder.binding.scoreTxt.setText(String.valueOf(item.getScore()));
 
-        // Safely load first image
+        // Load the first image if available
         if (item.getPic() != null && !item.getPic().isEmpty()) {
             Glide.with(context)
                     .load(item.getPic().get(0))
                     .into(holder.binding.mainPic);
         }
 
-        // Optional: Click listener
+        // Handle click to open DetailActivity
         holder.itemView.setOnClickListener(v -> {
-            // Future: Intent to details activity or Toast
-            // Toast.makeText(context, "Clicked: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("object", item); // Make sure ItemModel implements Serializable or Parcelable
+            context.startActivity(intent);
         });
     }
 
