@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private final String DATABASE_URL = "https://localist-d63b7-default-rtdb.europe-west1.firebasedatabase.app/";
     private static final int REQUEST_NOTIFICATION_PERMISSION = 1001;
+    private ArrayList<ItemModel> popularList = new ArrayList<>();
+    private PopularAdapter popularAdapter;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -53,11 +56,33 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        // Request permission for notifications
         requestNotificationPermission();
+
+        // Fetch FCM Token
         fetchFCMToken();
+
+        // Show startup notification
         showStartupNotification();
+
+        // Load popular items
         loadPopularItems();
+
+        // Search functionality
+        EditText searchInput = findViewById(R.id.search_edit_text);
+        searchInput.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                String query = charSequence.toString();
+                popularAdapter.filterItems(query);  // Filter items based on the query
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable editable) {}
+        });
 
         // Setup bottom navigation
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -85,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
     private void requestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
@@ -111,13 +137,12 @@ public class MainActivity extends AppCompatActivity {
                     saveTokenToFirestore(token);
                 });
     }
+
     private void loadPopularItems() {
         binding.progressBarPopular.setVisibility(View.VISIBLE);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance(DATABASE_URL);
         DatabaseReference popularRef = database.getReference("Popular");
-
-        ArrayList<ItemModel> popularList = new ArrayList<>();
 
         popularRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -129,9 +154,11 @@ public class MainActivity extends AppCompatActivity {
                     if (item != null) popularList.add(item);
                 }
 
+                // Set up the RecyclerView with the adapter and the layout manager
+                popularAdapter = new PopularAdapter(MainActivity.this, popularList);
                 GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
                 binding.recyclerViewPopular.setLayoutManager(layoutManager);
-                binding.recyclerViewPopular.setAdapter(new PopularAdapter(MainActivity.this, popularList));
+                binding.recyclerViewPopular.setAdapter(popularAdapter);
 
                 binding.progressBarPopular.setVisibility(View.GONE);
             }
@@ -143,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
@@ -157,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private void saveTokenToFirestore(String token) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -172,6 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(aVoid -> Log.d("FCM", "Token saved to Firestore successfully"))
                 .addOnFailureListener(e -> Log.e("FCM", "Error saving token to Firestore", e));
     }
+
     private void showStartupNotification() {
         String channelId = "localist_channel";
         String channelName = "Localist Notifications";

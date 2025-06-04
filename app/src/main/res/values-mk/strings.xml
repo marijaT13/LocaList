@@ -16,7 +16,7 @@
     <string name="profile">Профил</string>
     <string name="name">Име</string>
     <string name="home">Почетна</string>
-    <string name="inputSearch">Град, атракции...</string>
+    <string name="inputSearch">Град, атракции…</string>
     <string name="searchBtn">Пребарај</string>
     <string name="popular">Популарно</string>
     <string name="seeAll">Види ги сите</string>
@@ -60,4 +60,6 @@
     <string name="scoreTxt">5</string>
     <string name="appIcon">Апликациска иконка</string>
     <string name="clearBtn">Избриши</string>
+    <string name="no_results_found">Нема пронајдени резултати</string>
+
 </resources>
