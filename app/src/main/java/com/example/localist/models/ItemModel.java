@@ -23,7 +23,6 @@ public class ItemModel implements Serializable {
     private double score;
     private String wikiUrl;
     private String bookingUrl;
-
     @TypeConverters(ListTypeConverter.class)
     private ArrayList<String> pic;
 

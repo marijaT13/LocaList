@@ -16,14 +16,13 @@ public interface ItemDao {
     @Insert
     void insertItem(ItemModel item);
 
-    @Delete
-    void deleteItem(ItemModel item);
+    @Insert
+    void insertItems(List<ItemModel> items);  // New method for inserting a list of items
 
-    @Query("DELETE FROM saved_items")
-    void clearAll();
-
-
-    @Query("SELECT * FROM saved_items")
+    @Query("SELECT * FROM saved_items")  // Example query
     List<ItemModel> getAllSavedItems();
 
+
+    @Query("DELETE FROM saved_items")  // Example query for clearing the table
+    void clearAll();
 }

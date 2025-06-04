@@ -1,3 +1,4 @@
+
 package com.example.localist.adapters;
 
 import android.content.Context;

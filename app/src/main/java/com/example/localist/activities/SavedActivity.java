@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,6 @@ import java.util.ArrayList;
 import com.example.localist.database.AppDatabase;
 import com.example.localist.database.ItemDao;
 
-
 public class SavedActivity extends AppCompatActivity {
 
     private ActivitySavedBinding binding;
@@ -34,6 +34,7 @@ public class SavedActivity extends AppCompatActivity {
     private PopularAdapter adapter;
     private DatabaseReference savedRef;
     private ItemDao itemDao;
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
@@ -75,14 +76,16 @@ public class SavedActivity extends AppCompatActivity {
         savedRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                savedList.clear();
+                savedList.clear();  // Clear the current list to avoid duplicates
                 for (DataSnapshot data : snapshot.getChildren()) {
                     ItemModel item = data.getValue(ItemModel.class);
                     if (item != null) {
-                        savedList.add(item);
+                        savedList.add(item);  // Add item to the list
                     }
                 }
-                adapter.notifyDataSetChanged();
+                // Save the updated list in Room
+                saveItemsToRoom(savedList);
+                Log.d("SavedActivity", "Firebase data loaded: " + savedList.size());
             }
 
             @Override
@@ -92,17 +95,28 @@ public class SavedActivity extends AppCompatActivity {
         });
     }
 
+    private void saveItemsToRoom(ArrayList<ItemModel> items) {
+        new Thread(() -> {
+            itemDao.clearAll();  // Clear previous items in Room
+            itemDao.insertItems(items);  // Insert new items from Firebase
+            Log.d("SavedActivity", "Items saved to Room: " + items.size());
+        }).start();
+    }
+
     private void setupClearButton() {
         binding.btnClearSaved.setOnClickListener(v -> {
             if (savedRef != null) {
                 savedRef.removeValue()
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(SavedActivity.this, "Saved items cleared", Toast.LENGTH_SHORT).show();
-                            savedList.clear();
+                            savedList.clear();  // Clear the saved list
                             adapter.notifyDataSetChanged();
+                            Log.d("SavedActivity", "Items cleared from Firebase");
                         })
-                        .addOnFailureListener(e ->
-                                Toast.makeText(SavedActivity.this, "Failed to clear saved items", Toast.LENGTH_SHORT).show());
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(SavedActivity.this, "Failed to clear saved items", Toast.LENGTH_SHORT).show();
+                            Log.e("SavedActivity", "Error clearing saved items", e);
+                        });
             } else {
                 Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
             }
@@ -126,8 +140,8 @@ public class SavedActivity extends AppCompatActivity {
             }
             return false;
         });
-
     }
+
     private void loadSavedItemsFromRoom() {
         new Thread(() -> {
             ArrayList<ItemModel> items = new ArrayList<>(itemDao.getAllSavedItems());
@@ -135,6 +149,7 @@ public class SavedActivity extends AppCompatActivity {
                 savedList.clear();
                 savedList.addAll(items);
                 adapter.notifyDataSetChanged();
+                Log.d("SavedActivity", "Items loaded from Room: " + items.size());
             });
         }).start();
     }
