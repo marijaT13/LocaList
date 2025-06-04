@@ -1,6 +1,8 @@
 package com.example.localist.activities;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 
@@ -25,9 +28,12 @@ import com.example.localist.models.ItemModel;
 import com.example.localist.utils.LocaleHelper;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.*;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         requestNotificationPermission();
         fetchFCMToken();
-
+        showStartupNotification();
         loadPopularItems();
 
         // Setup bottom navigation
@@ -99,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                     String token = task.getResult();
                     Log.d("FCM", "FCM Token: " + token);
                     // You can send this token to your server if needed
+                    saveTokenToFirestore(token);
                 });
     }
     private void loadPopularItems() {
@@ -146,5 +154,38 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Notification permission denied", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+    private void saveTokenToFirestore(String token) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // You can use FirebaseAuth.getUid() if users are signed in
+        String userId = "user_" + System.currentTimeMillis();
+
+        Map<String, Object> tokenData = new HashMap<>();
+        tokenData.put("token", token);
+        tokenData.put("timestamp", System.currentTimeMillis());
+
+        db.collection("user_tokens").document(userId)
+                .set(tokenData)
+                .addOnSuccessListener(aVoid -> Log.d("FCM", "Token saved to Firestore successfully"))
+                .addOnFailureListener(e -> Log.e("FCM", "Error saving token to Firestore", e));
+    }
+    private void showStartupNotification() {
+        String channelId = "localist_channel";
+        String channelName = "Localist Notifications";
+
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+            manager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.bell_icon)
+                .setContentTitle("Welcome to Localist!")
+                .setContentText("Discover the best places across Macedonia.")
+                .setAutoCancel(true);
+
+        manager.notify(1001, builder.build());
     }
 }
