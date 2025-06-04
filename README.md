@@ -12,6 +12,9 @@ A travel guide that shows the beauty of Macedonia. This app will be the first fo
 <img src="https://github.com/user-attachments/assets/30089a2a-30f3-48c1-9fdd-9079d043eee5" width="250">
 <img src="https://github.com/user-attachments/assets/3bda3d8c-b400-40d9-84fd-9ada93f10584" width="250">
 <img src="https://github.com/user-attachments/assets/8f930643-94bd-4327-ade7-b822c16b83ca" width="250">
+
 https://github.com/user-attachments/assets/da40f18b-bded-40d7-a3ab-93ad65fb0f52
+
 https://github.com/user-attachments/assets/97d88569-c24e-4b0f-ab69-1c2a7803f0af
+
 https://github.com/user-attachments/assets/6b90696c-8dde-4360-8861-d9fb92b388bb
