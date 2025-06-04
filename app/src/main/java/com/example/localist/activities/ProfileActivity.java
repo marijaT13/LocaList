@@ -16,6 +16,7 @@ import com.example.localist.R;
 import com.example.localist.databinding.ActivityProfileBinding;
 import com.example.localist.fragments.IntroFragment;
 import com.example.localist.utils.LocaleHelper;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +28,8 @@ public class ProfileActivity extends AppCompatActivity {
     private ActivityProfileBinding binding;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.setLocale(newBase, LocaleHelper.getPersistedLanguage(newBase)));
@@ -36,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
@@ -108,6 +112,11 @@ public class ProfileActivity extends AppCompatActivity {
 
             // Set and persist language
             LocaleHelper.setLocale(ProfileActivity.this, newLang);
+
+            // Log language change to Firebase Analytics
+            Bundle bundle = new Bundle();
+            bundle.putString("language_selected", newLang);
+            firebaseAnalytics.logEvent("language_changed", bundle);
 
             // Restart the entire app to apply changes
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
