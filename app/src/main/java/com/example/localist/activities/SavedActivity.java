@@ -27,8 +27,6 @@ import com.example.localist.database.AppDatabase;
 import com.example.localist.database.ItemDao;
 
 
-
-
 public class SavedActivity extends AppCompatActivity {
 
     private ActivitySavedBinding binding;
@@ -44,24 +42,26 @@ public class SavedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivitySavedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        itemDao = AppDatabase.getInstance(this).itemDao();
-        loadSavedItemsFromRoom();  // Instead of Firebase for now
 
         savedList = new ArrayList<>();
         adapter = new PopularAdapter(this, savedList);
         binding.recyclerViewSaved.setLayoutManager(new GridLayoutManager(this, 2));
         binding.recyclerViewSaved.setAdapter(adapter);
 
+        itemDao = AppDatabase.getInstance(this).itemDao();
+        loadSavedItemsFromRoom();
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             savedRef = FirebaseDatabase.getInstance("https://localist-d63b7-default-rtdb.europe-west1.firebasedatabase.app/")
                     .getReference("Saved")
                     .child(user.getUid());
+            loadSavedItemsFromFirebase();  // Load from Firebase only if user is logged in
         }
 
-        loadSavedItemsFromFirebase();
         setupBottomNavigation();
         setupClearButton();
     }

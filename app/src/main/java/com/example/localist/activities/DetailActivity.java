@@ -3,6 +3,7 @@ package com.example.localist.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -98,8 +99,8 @@ public class DetailActivity extends AppCompatActivity {
                 object.setId(id); // Ensure ID is set
 
                 savedRef.child(id).setValue(object)
-                        .addOnSuccessListener(aVoid -> Toast.makeText(this, "Saved to Firebase", Toast.LENGTH_SHORT).show())
-                        .addOnFailureListener(e -> Toast.makeText(this, "Failed to save to Firebase", Toast.LENGTH_SHORT).show());
+                        .addOnSuccessListener(aVoid -> Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show())
+                        .addOnFailureListener(e -> Toast.makeText(this, "Failed to save", Toast.LENGTH_SHORT).show());
 
                 // Room (in background thread)
                 new Thread(() -> itemDao.insertItem(object)).start();
